@@ -16,14 +16,7 @@ public class Vestaboard
 
     public Vestaboard(IConfigurationRoot config)
     {
-        try
-        {
-            Key = config["READ_WRITE_KEY"]!;
-        }
-        catch(Exception)
-        {
-            throw new NullReferenceException("Could not get the Read/Write Key");
-        }
+        Key = config["READ_WRITE_KEY"]!;
         
         Client = new HttpClient();
     }
@@ -36,11 +29,6 @@ public class Vestaboard
     public async Task<HttpResponseMessage> SendSimpleMessage(string message)
     {
         return await SendRequest(HttpMethod.Post, message);
-    }
-
-    public async Task<string> SendComplexMessage(int[][] message)
-    {
-        return "";
     }
 
     private async Task<HttpResponseMessage> SendRequest(HttpMethod method, string message)
