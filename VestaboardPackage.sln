@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VestaboardPackage", "VestaboardPackage\VestaboardPackage.csproj", "{A56FDD74-39DC-4F40-918C-25861E81F85E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestaboard.NET", "Vestaboard.NET\Vestaboard.NET.csproj", "{A56FDD74-39DC-4F40-918C-25861E81F85E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
