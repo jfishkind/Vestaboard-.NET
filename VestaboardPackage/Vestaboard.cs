@@ -1,17 +1,66 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace VestaboardPackage;
 
-public class VestaboardClient
+public class Vestaboard
 {
-    private string _key { get; }
+    private const string RequestUri = "https://rw.vestaboard.com/";
+    private const string HeaderName = "X-Vestaboard-Read-Write-Key";
+    private string Key { get; }
+    private HttpClient Client { get; }
 
-    public VestaboardClient()
+    public Vestaboard(IConfigurationRoot config)
     {
-        var config = new ConfigurationBuilder()
-            .AddUserSecrets<VestaboardClient>()
-            .Build();
+        try
+        {
+            Key = config["READ_WRITE_KEY"]!;
+        }
+        catch(Exception)
+        {
+            throw new NullReferenceException("Could not get the Read/Write Key");
+        }
+        
+        Client = new HttpClient();
+    }
 
-        _key = config["READ_WRITE_KEY"];
+    public async Task<HttpResponseMessage> GetCurrentView()
+    {
+        return await SendRequest(HttpMethod.Get, "");
+    }
+
+    public async Task<HttpResponseMessage> SendSimpleMessage(string message)
+    {
+        return await SendRequest(HttpMethod.Post, message);
+    }
+
+    public async Task<string> SendComplexMessage(int[][] message)
+    {
+        return "";
+    }
+
+    private async Task<HttpResponseMessage> SendRequest(HttpMethod method, string message)
+    {
+        var request = new HttpRequestMessage(method, RequestUri);
+
+        request.Headers.Add(HeaderName, Key);
+
+        request.Content = new StringContent(message);
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+        var response = await Client.SendAsync(request);
+
+        return response;
+    }
+
+    private static string GetJsonString(string message)
+    {
+        var jsonObject = new
+        {
+            text = message
+        };
+        
+        return JsonConvert.SerializeObject(jsonObject);
     }
 }
