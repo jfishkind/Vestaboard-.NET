@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestaboard.NET", "Vestaboard.NET\Vestaboard.NET.csproj", "{A56FDD74-39DC-4F40-918C-25861E81F85E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{ADD191FE-91AB-4929-B761-A2E32161E8EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{A56FDD74-39DC-4F40-918C-25861E81F85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A56FDD74-39DC-4F40-918C-25861E81F85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A56FDD74-39DC-4F40-918C-25861E81F85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD191FE-91AB-4929-B761-A2E32161E8EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD191FE-91AB-4929-B761-A2E32161E8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD191FE-91AB-4929-B761-A2E32161E8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD191FE-91AB-4929-B761-A2E32161E8EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
