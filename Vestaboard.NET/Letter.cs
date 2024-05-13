@@ -1,31 +1,36 @@
-namespace VestaboardPackage;
-
-public enum Letter
+namespace VestaboardPackage
 {
-    A = 1,
-    B = 2,
-    C = 3,
-    D = 4,
-    E = 5,
-    F = 6,
-    G = 7,
-    H = 8,
-    I = 9,
-    J = 10,
-    K = 11,
-    L = 12,
-    M = 13,
-    N = 14,
-    O = 15,
-    P = 16,
-    Q = 17,
-    R = 18,
-    S = 19,
-    T = 20,
-    U = 21,
-    V = 22,
-    W = 23,
-    X = 24,
-    Y = 25,
-    Z = 26
+    public class Letter : Enumeration
+    {
+        public static Letter A = new Letter(1, "A");
+        public static Letter B = new Letter(2, "B");
+        public static Letter C = new Letter(3, "C");
+        public static Letter D = new Letter(4, "D");
+        public static Letter E = new Letter(5, "E");
+        public static Letter F = new Letter(6, "F");
+        public static Letter G = new Letter(7, "G");
+        public static Letter H = new Letter(8, "H");
+        public static Letter I = new Letter(9, "I");
+        public static Letter J = new Letter(10, "J");
+        public static Letter K = new Letter(11, "K");
+        public static Letter L = new Letter(12, "L");
+        public static Letter M = new Letter(13, "M");
+        public static Letter N = new Letter(14, "N");
+        public static Letter O = new Letter(15, "O");
+        public static Letter P = new Letter(16, "P");
+        public static Letter Q = new Letter(17, "Q");
+        public static Letter R = new Letter(18, "R");
+        public static Letter S = new Letter(19, "S");
+        public static Letter T = new Letter(20, "T");
+        public static Letter U = new Letter(21, "U");
+        public static Letter V = new Letter(22, "V");
+        public static Letter W = new Letter(23, "W");
+        public static Letter X = new Letter(24, "X");
+        public static Letter Y = new Letter(25, "Y");
+        public static Letter Z = new Letter(26, "Z");
+
+        private Letter(int id, string name) : base(id, name)
+        {
+        }
+    }
 }

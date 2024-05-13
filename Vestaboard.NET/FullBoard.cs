@@ -50,20 +50,15 @@ public class FullBoard
             return num == 0 ? 36 : num + 26;
         }
 
-        var color = BitExtensions.GetColorID(str);
-        
-        if (color != 0)
+        var id = Enumeration.GetIdFromValue<Letter>(str);
+
+        if (id != 0)
         {
-            return color;
+            return id;
         }
 
-        var letter = BitExtensions.GetLetterID(str);
+        id = Enumeration.GetIdFromValue<Color>(str);
         
-        if (letter != 0)
-        {
-            return letter;
-        }
-
-        return 1;
+        return id != 0 ? id : Enumeration.GetIdFromSymbol(str);
     }
 }

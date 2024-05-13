@@ -7,6 +7,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Vestaboard .NET</Title>
         <RootNamespace>VestaboardPackage</RootNamespace>
+        <UserSecretsId>1a68c2d4-8519-47cd-8699-6d721e701876</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

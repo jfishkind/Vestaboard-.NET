@@ -1,14 +1,19 @@
-namespace VestaboardPackage;
-
-public enum Color
+namespace VestaboardPackage
 {
-    Red = 63,
-    Orange = 64,
-    Yellow = 65,
-    Green = 66,
-    Blue = 67,
-    Purple = 68,
-    White = 69,
-    Black = 70,
-    Filled = 71
+    public class Color : Enumeration
+    {
+        public static Color Red = new Color(63, "Red");
+        public static Color Orange = new Color(64, "Orange");
+        public static Color Yellow = new Color(65, "Yellow");
+        public static Color Green = new Color(66, "Green");
+        public static Color Blue = new Color(67, "Blue");
+        public static Color Purple = new Color(68, "Purple");
+        public static Color White = new Color(69, "White");
+        public static Color Black = new Color(70, "Black");
+        public static Color Filled = new Color(71, "Filled");
+
+        private Color(int id, string name) : base(id, name)
+        {
+        }
+    }
 }
